@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidharth B Sunil - Personal Webpage</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://media0.giphy.com/media/l0NwGpoOVLTAyUJSo/giphy.gif'); /* Add the Batman-themed background image */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 18px;
+        }
+        header {
+            padding: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            padding: 10px;
+            background-color: #333;
+        }
+        /* Updated CSS for Instagram link */
+        #instagram-link {
+            color: #E4405F; /* Instagram brand color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sidharth B Sunil</h1>
+    </header>
+    <main>
+        <section>
+            <img src="https://lh3.googleusercontent.com/pw/AIL4fc8jtMECvL4sLX-XfN_3Bvxkx5-_oGuVepLPzkS1SX1T3t-6bkaC1pmBtrKjBco54IHjrFQqPBcxfX_thEPaLaKI4QdG0i35S15a-x7cvALP0-pwCtyooj3Sr2fQJcSNRtPdWBq0Qzz9yo7gya2VD6skalggJiHKgCKDM5OIfptyYyoADejXl2c1BRZF8AFwzrKfpYvZ9nR6yZ7JteDQ48pYQI7uppFhH7PmmCs_XulK9sxa0mpZBC5VgYP68XFo-OLoxIYdtVBfK-MdM64RjeBnLeYiwOkvcq-YNJn7bDxn-0PFQBOm6wTMZ4IjNCn7W_mQFjsJp_NfYnDbgxeZSA9kLwWqRCWxSGtNLZJdwZx4e3KG2v4qaQCtcvtGGukf7Tfd57dq6BfFmMCcJGwUZTPfQGJyENEA2S3w099W3_-tPtEolercGIQ3RVpuPNbbThxIcoh4kCOXpTTB7M908cVh5e6u97TaU1xag8LFb04KBhCst7K4NpSKqNf8fvs_kVc35eP5tdHrAJrIvi_vvC2FMyGUvBfnc8Qu5TT2IrAvD4g6iZJEAuhLBbXgRzckaaWNZoWC5HHS82g47rOlEKKbYBS2yvjtFVb_bl8kVweED8DTPyfSwTk0E_DxOpqWKnQwVlm4VqKw6-KJiHPJvfsBl-28S2Tu1jBu_7yc0RP6Qu2rnsh_gkpqFggqu_0HvOqZ6PqJRypFYqSHJ2ezCtKdkx-rQ2YFFu2Rb40wy0hbgdtyuafecwC--v5xyyNVy_L0shaVZNxiBNfAjHCrDHMTrs-hk7z0XDh7lm2cfdFtivVpMBQ3Bx9AF2BhU_vpEgz-59k54QyM6hX2eNw3hkP_BljdW0DOt_pvdRAu910sIlyabcFU9fpohOmmADZrT0FLGQAlKywxDE1WWnzaXPw0CRhAipqhH1ME5RTC4YNKpIpaubcFovOl-ntzJGPKJ759V4QmUoh7ggg7cMwbbDGMgiJHyA=w671-h661-s-no?authuser=0.png" width="25%" alt="sidharthbsunil">
+            <h2>About Me</h2>
+            <p>Hello, I'm Sidharth B Sunil. I'm passionate about technology and enjoy building websites and applications. Feel free to reach out to me on WhatsApp at <a href="https://wa.me/9188775364">9188775364</a>.</p>
+            <p>BTech(EC) at College Of Engineering Perumon</p>
+        </section>
+        <section>
+            <h2>Contact Information</h2>
+            <p>WhatsApp: <a href="https://wa.me/9188775364">9188775364</a></p>
+            <!-- Instagram link -->
+            <p>Instagram: <a id="instagram-link" href="https://www.instagram.com/sidharthbsunil/">@sidharthbsunil</a></p>
+        </section>
+        <section>
+            <h2>Greeting</h2>
+            <p id="greeting"></p>
+        </section>
+    </main>
+    <footer>
+        <!-- Webpage visit count (using an external service like a counter) -->
+        <p>Total Webpage Visits: <span id="visit-count">Loading...</span></p>
+        <p>&copy; 2023 Sidharth B Sunil</p>
+    </footer>
+
+    <script>
+        // JavaScript for displaying a greeting
+        function getGreeting() {
+            const currentTime = new Date();
+            const hours = currentTime.getHours();
+
+            let greeting = "";
+
+            if (hours < 12) {
+                greeting = "Good morning!";
+            } else if (hours < 18) {
+                greeting = "Good afternoon!";
+            } else {
+                greeting = "Good evening!";
+            }
+
+            return greeting;
+        }
+
+        const greetingElement = document.getElementById("greeting");
+        const currentGreeting = getGreeting();
+        greetingElement.textContent = currentGreeting;
+
+        // JavaScript for fetching and displaying webpage visit count
+        fetch('https://your-visit-counter-api.com/count')
+            .then(response => response.text())
+            .then(count => {
+                const visitCountElement = document.getElementById("visit-count");
+                visitCountElement.textContent = count;
+            })
+            .catch(error => {
+                console.error("Error fetching visit count:", error);
+            });
+    </script>
+</body>
+</html>
